@@ -17,11 +17,11 @@ struct APICaller {
             if let error = error {
                 print("error fetching data: \(error.localizedDescription)")
             }
-            
+
             guard let jsonData = data else { return }
-            
+
             let decoder = JSONDecoder()
-            
+
             do {
                 let decodedData = try decoder.decode(travelModel.self, from: jsonData)
                 completion(decodedData)
@@ -29,7 +29,7 @@ struct APICaller {
                 print("error decoding data")
             }
         }
-        
+
         dataTask.resume()
     }
 }

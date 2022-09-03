@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-// MARK: - Empty
+// MARK: - travelModel
 struct travelModel: Codable {
     let error: Bool
     let message: String
@@ -22,4 +23,13 @@ struct Place: Codable {
     let longitude, latitude: Double
     let like: Int
     let image: String
+    
+    enum CodingKeys: String, CodingKey {
+            case id, name
+            case placeDescription = "description"
+            case address, longitude, latitude, like, image
+        }
+
+    
+  
 }

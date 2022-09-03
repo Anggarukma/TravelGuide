@@ -40,7 +40,7 @@ class CustomViewCell: UITableViewCell {
     func setTitleLabel() {
         titleLabel.numberOfLines = 2
         titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.text = "angga"
+        titleLabel.text = "ini adalah title dua bari tes coba bisa gak ya?"
     }
     
     
@@ -49,7 +49,7 @@ class CustomViewCell: UITableViewCell {
         travelImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                                = true
         travelImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive                  = true
         travelImageView.heightAnchor.constraint(equalToConstant: 80).isActive                                    = true
-        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 16/9).isActive = true
+        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 12/9).isActive = true
     }
     
     
