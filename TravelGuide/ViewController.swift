@@ -19,17 +19,7 @@ class ViewController: UIViewController {
         title = "Travel Guide"
         setTableView()
         view.addSubview(tableView)
-        let APICaller = APICaller()
-        APICaller.fetchData { (places) in
-            print(places.places)
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-            
-//            let imgUrl = "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Kelimutu_2008-08-08.jpg/800px-Kelimutu_2008-08-08.jpg"
-//            self.myPlace = places.places
-        }
-      }
+ }
     
     func setTableView() {
     tableView.delegate = self
@@ -41,29 +31,40 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myPlace.count
+        return dummyTravelData.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: CustomViewCell.identifier)
-//        let cell = tableView.dequeueReusableCell(withIdentifier: CustomViewCell.identifier, for: indexPath)
-        
-        let place = myPlace[indexPath.row]
 
-        cell.textLabel?.text = place.placeDescription
-        
-        return cell
+        if let cell = tableView.dequeueReusableCell(
+              withIdentifier: "CustomViewCell",
+              for: indexPath
+            ) as? CustomViewCell {
+            
+            // MARK: Menetapkan nilai gambar dan nama untuk setiap cell/item.
+            let travel = dummyTravelData[indexPath.row]
+            cell.titleLabel.text = travel.name
+            cell.travelImageView.image = travel.image
+//            cell.AcademyDescription.text = academy.description
+            
+            // MARK: Mengembalikan cell agar bisa ditampilkan dalam TableView.
+          return cell
+        } else {
+            
+        // MARK: Mengembalikan UITableViewCell ketika cell bernilai nil/null.
+          return UITableViewCell()
         }
+    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return 110
     }
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let vc = DetailViewController(items: [])
+        let vc = DetailViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
 }

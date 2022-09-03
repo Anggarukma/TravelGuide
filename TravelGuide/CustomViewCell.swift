@@ -33,14 +33,14 @@ class CustomViewCell: UITableViewCell {
     func setImageView() {
         travelImageView.layer.cornerRadius = 10
         travelImageView.clipsToBounds      = true
-        travelImageView.image = UIImage(named: "angga")
+        travelImageView.image = UIImage(named: "name")
     }
     
     
     func setTitleLabel() {
         titleLabel.numberOfLines = 2
         titleLabel.adjustsFontSizeToFitWidth = true
-        titleLabel.text = "ini adalah title dua bari tes coba bisa gak ya?"
+        titleLabel.text = "lorem jjbejabjbjabdjkabdjkbakjdbajkdbjkabdkjabdkabk"
     }
     
     
@@ -48,8 +48,8 @@ class CustomViewCell: UITableViewCell {
         travelImageView.translatesAutoresizingMaskIntoConstraints                                                = false
         travelImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                                = true
         travelImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive                  = true
-        travelImageView.heightAnchor.constraint(equalToConstant: 80).isActive                                    = true
-        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 12/9).isActive = true
+        travelImageView.heightAnchor.constraint(equalToConstant: 90).isActive                                    = true
+        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 13/8).isActive = true
     }
     
     
