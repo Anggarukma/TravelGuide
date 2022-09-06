@@ -10,14 +10,26 @@ import UIKit
 class DetailViewController: UIViewController {
 
     
-    var image: UIImageView!
-    var placeDescript: UILabel!
-    var nameLabel: UILabel!
+    var image: UIImageView! = {
+        return UIImageView()
+    }()
+    
+    var placeDescript: UILabel! = {
+        return UILabel()
+    }()
+    
+    var nameLabel: UILabel! = {
+        return UILabel()
+    }()
+    
     var myPlace: Place? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "angga"
+        
+    
         
         if let result = myPlace {
             nameLabel.text = result.name
@@ -26,4 +38,5 @@ class DetailViewController: UIViewController {
 
         }
     }
-}
+    
+  }

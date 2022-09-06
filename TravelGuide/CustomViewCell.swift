@@ -49,7 +49,7 @@ class CustomViewCell: UITableViewCell {
         travelImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                                = true
         travelImageView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12).isActive                  = true
         travelImageView.heightAnchor.constraint(equalToConstant: 90).isActive                                    = true
-        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 13/8).isActive = true
+        travelImageView.widthAnchor.constraint(equalTo: travelImageView.heightAnchor, multiplier: 10/8).isActive = true
     }
     
     

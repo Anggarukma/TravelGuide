@@ -42,17 +42,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
               for: indexPath
             ) as? CustomViewCell {
             
-            // MARK: Menetapkan nilai gambar dan nama untuk setiap cell/item.
             let travel = dummyTravelData[indexPath.row]
             cell.titleLabel.text = travel.name
             cell.travelImageView.image = travel.image
-//            cell.AcademyDescription.text = academy.description
+
             
-            // MARK: Mengembalikan cell agar bisa ditampilkan dalam TableView.
           return cell
         } else {
             
-        // MARK: Mengembalikan UITableViewCell ketika cell bernilai nil/null.
           return UITableViewCell()
         }
     }
@@ -65,6 +62,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = DetailViewController()
+        vc.myPlace = dummyTravelData[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
 }
